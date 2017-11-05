@@ -1,0 +1,30 @@
+{
+  "name": "webpack-typescript-starter",
+  "version": "0.0.1",
+  "description": "A simple Webpack starter with TypeScript transpilation",
+  "main": "index.js",
+  "scripts": {
+    "serve": "webpack-dev-server --open --port 8000 --inline --progress --profile --colors --watch --content-base dist/",
+    "build": "webpack --watch",
+    "build:prod": "cross-env NODE_ENV=production webpack",
+    "webpack": "webpack --inline --progress --profile --colors"
+  },
+  "keywords": [
+    "webpack",
+    "typescript"
+  ],
+  "author": "Ivanov Max",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "7.0.0",
+    "awesome-typescript-loader": "^3.0.0",
+    "cross-env": "^5.1.1",
+    "html-webpack-plugin": "^2.0.0",
+    "source-map-loader": "^0.1.6",
+    "tslint": "^4.3.1",
+    "tslint-loader": "^3.3.0",
+    "typescript": "^2.1.5",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.2.1"
+  }
+}
