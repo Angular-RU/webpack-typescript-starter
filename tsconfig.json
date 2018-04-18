@@ -1,11 +1,26 @@
 {
-  "compilerOptions": {
-    "outDir": "./dist/",
-    "sourceMap": true,
-    "noImplicitAny": true,
-    "module": "commonjs",
-    "lib": [ "es2015", "dom" ],
-    "target": "es5",
-    "allowJs": true
-  }
+    "compileOnSave": false,
+    "compilerOptions": {
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "es5",
+        "typeRoots": [
+            "./node_modules/@types"
+        ],
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "lib": [
+            "es2017",
+            "dom"
+        ],
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "noUnusedParameters": true,
+        "forceConsistentCasingInFileNames": true,
+        "allowJs": true,
+        "strictNullChecks": false
+    }
 }

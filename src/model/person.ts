@@ -1,16 +1,10 @@
 export class Person {
-  private _name: string;
+    constructor(public name: string, public age: number, public hobby: string) {}
 
-  constructor(name: string) {
-    this._name = name;
-  }
-
-  public async sayHello() {
-    console.log('Current name', this._name);
-  }
-
-  public getName() {
-    return this._name;
-  }
-
+    /**
+     * @returns {Promise}
+     */
+    public async sayHello(): Promise<void> {
+        console.log(`Current name is ${this.name}.`);
+    }
 }
