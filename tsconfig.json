@@ -7,6 +7,7 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "target": "es5",
+        "module": "esnext",
         "typeRoots": [
             "./node_modules/@types"
         ],
@@ -14,6 +15,7 @@
         "noFallthroughCasesInSwitch": true,
         "lib": [
             "es2017",
+            "es2015",
             "dom"
         ],
         "noImplicitAny": true,

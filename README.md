@@ -11,7 +11,7 @@ Webpack + TypeScript starter
 - [x] TypeScript compilation
 - [x] ts-lint
 - [x] Webpack Development Server
-- [ ] Karma and Jasmine test execution
+- [x] Karma and Jasmine test execution
 
 ## How to use
 
@@ -36,4 +36,7 @@ $ npm run build
 
 # Сборка приложения с минификацией: 
 $ npm run build:prod
+
+# Запуск тестов
+$ npm run test
 ```

@@ -79,7 +79,9 @@ if (isProduction) {
     module.exports = merge(config, {
         devServer: {
             port: 4200,
-            open: false
+            open: true,
+            watchContentBase: true,
+            historyApiFallback: true
         }
     });
 }
