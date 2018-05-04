@@ -42,13 +42,13 @@ module.exports = (config) => {
 
             plugins: [
                 new SourceMapDevToolPlugin({
-			test: /\.(ts|js)($|\?)/
-		})
+			        test: /\.(ts|js)($|\?)/
+		        })
             ]
         },
 
         webpackMiddleware: {
-	    stats: {
+	        stats: {
                 colors: true,
                 chunks: false
             }
@@ -58,24 +58,24 @@ module.exports = (config) => {
             captureConsole: false
         },
 
-        logLevel: config.LOG_INFO,
+	    logLevel: config.LOG_INFO,
 
-	mime: {
+	    mime: {
             'text/x-typescript': ['ts']
         },
 
-	reporters: ['progress', 'coverage'],
+	    reporters: ['progress', 'coverage'],
 
-	port: 9876,
+	    port: 9876,
 
-	colors: true,
+    	colors: true,
 
-	autoWatch: false,
+	    autoWatch: false,
 
-	singleRun: true,
+	    singleRun: true,
 
         concurrency: Infinity,
-        
+
         coverageReporter: {
             type : 'html',
             dir : 'coverage/'
