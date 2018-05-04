@@ -1,20 +1,22 @@
-import { Person } from './model/person';
+async function bootstrap(main: HTMLMainElement) {
+    const module = await import(`./pages${location.pathname}.ts`);
+    main.innerHTML = module.default;
+}
 
-const name = window.prompt('What is your name?', 'Anonymous');
-const age = Number(window.prompt('How old are you?', String(20)));
-const hobby = window.prompt('What is your hobby?', 'programming');
-const person = new Person(name, age, hobby);
+document.addEventListener('DOMContentLoaded', async () => {
+    const main: HTMLMainElement = document.querySelector('main');
+    const links = Array.from(document.querySelectorAll('a'));
 
-person.sayHello().then(() => {
-    const els = Array.from(document.querySelectorAll('body *')) as Array<HTMLElement>;
+    await bootstrap(main);
 
-    Object.keys(person).forEach((key: keyof Person) => {
-        els.forEach((el: HTMLElement) => {
-            const pattern = new RegExp(`{{\\s*${key}\\s*}}`);
+    links.forEach((link) => {
+        link.addEventListener('click', async (e: MouseEvent) => {
+            e.preventDefault();
 
-            if (~el.textContent.search(pattern)) {
-                el.textContent = el.textContent.replace(pattern, `${person[key]}`);
-            }
+            const module = await import(`./pages/${link.dataset.chunk}.ts`);
+
+            history.replaceState({}, `${link.dataset.title}`, `/${link.dataset.chunk}`);
+            main.innerHTML = module.default;
         });
     });
 });
