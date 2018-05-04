@@ -53,7 +53,7 @@ module.exports = (config) => {
                 chunks: false
             }
         },
-        
+
         client: {
             captureConsole: false
         },
