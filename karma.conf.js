@@ -6,7 +6,7 @@ const SourceMapDevToolPlugin = require('webpack').SourceMapDevToolPlugin;
 const testFile = process.argv[4] || '*';
 const testFilesGlob = `./src/**/${testFile}.spec.ts`;
 
-module.exports = (config) => {
+module.exports = config => {
     config.set({
         basePath: __dirname,
 
@@ -42,15 +42,15 @@ module.exports = (config) => {
 
             plugins: [
                 new SourceMapDevToolPlugin({
-			        test: /\.(ts|js)($|\?)/
-		        })
+                    test: /\.(ts|js)($|\?)/
+                })
             ]
         },
 
         webpackMiddleware: {
-	        stats: {
-                colors: true,
-                chunks: false
+            stats: {
+                color: true,
+                chunks: true
             }
         },
 
@@ -58,27 +58,27 @@ module.exports = (config) => {
             captureConsole: false
         },
 
-	    logLevel: config.LOG_INFO,
+        logLevel: config.LOG_INFO,
 
-	    mime: {
+        mime: {
             'text/x-typescript': ['ts']
         },
 
-	    reporters: ['progress', 'coverage'],
+        reporters: ['progress', 'coverage'],
 
-	    port: 9876,
+        port: 9876,
 
-    	colors: true,
+        colors: true,
 
-	    autoWatch: false,
+        autoWatch: false,
 
-	    singleRun: true,
+        singleRun: true,
 
         concurrency: Infinity,
 
         coverageReporter: {
-            type : 'html',
-            dir : 'coverage/'
+            type: 'html',
+            dir: 'coverage/'
         }
     });
 };
